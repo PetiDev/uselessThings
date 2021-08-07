@@ -1,0 +1,26 @@
+let text = "aasd123".split("");
+const def = text;
+let ascii = " abcdefghijklmnopqrstuvwxyz1234567890 abcdefghijklmnopqrstuvwxyz1234567890".split("");
+let map = [
+    [],
+    []
+]
+
+for (x = 0; x < text.length; x++) {
+    let char = text[x];
+    let regex = `${char}`;
+    let red = new RegExp(regex, "g");
+    let charNum = text.join("").match(red).length;
+
+    if (map[0].indexOf(char) < 0) {
+        map[0].push(char);
+        map[1].push(charNum);
+    }
+}
+
+for (z = 0; z < text.length; z++) {
+    text[z] = ascii[ascii.indexOf(def[z]) + map[1][map[0].indexOf(def[z])]] //change plus(+) to minus(-) for decoding
+}
+
+console.table(map);
+console.log(text.join(""));
