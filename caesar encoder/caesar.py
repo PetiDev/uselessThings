@@ -44,3 +44,4 @@ for x in range(len(outList)):
     out += chr(outList[x])
 
 print("Eredmény:", out)
+input("PAUSED (hit enter to exit)")
