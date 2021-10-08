@@ -23,22 +23,12 @@ mode = input("Adj meg egy módot (encode/decode;e/d){def: encode}> ").lower()
 while len(key) < len(text):
     key += key
 
-for letter in text:
-    textList[counter] = ord(letter)
-    counter += 1
-counter = 0
-
-for letter in key:
-    keyList[counter] = ord(letter) - 64
-    counter += 1
-counter = 0
-
 if mode == "decode" or mode == "d":
     for x in range(len(key)):
-        outList[x] = textList[x] - keyList[x]
+        outList[x] = ord(text[x]) - (ord(key[x])-64)
 else:
     for x in range(len(key)):
-        outList[x] = textList[x] + keyList[x]
+        outList[x] = ord(text[x]) + (ord(key[x])-64)
 
 for x in range(len(outList)):
     out += chr(outList[x])
