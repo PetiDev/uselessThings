@@ -1,18 +1,19 @@
 from os import system
 
 maxNum = int(input("Input max number> "))
-numList = {}
+numList = {2: 2}
 out = ""
 
 print("Generating list...")
 
-
+# Generating number list
 for x in range(3, maxNum + 1, 2):
     numList[x] = x
-numList[2] = 2
 
 system('cls')
 print("Sorting, may take some time...")
+
+# Sorting prime numbers from list
 for _, val in list(numList.items()):
     currNum = val
     for key, value in list(numList.items()):
@@ -21,6 +22,7 @@ for _, val in list(numList.items()):
                 del numList[value]
 system('cls')
 print("Joining numbers, may take some time...")
+# Joining output string
 for num in numList:
     out += str(num) + " "
 system('cls')
