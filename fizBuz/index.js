@@ -1,13 +1,1 @@
-let fizBuz = [];
-for(let x = 1;x<100;x++){
-    if(x % 3 == 0 && x % 5 == 0){
-        fizBuz[x] = 'fizBuz';
-    }else if(x % 3 == 0){
-        fizBuz[x] = 'fiz';
-    }else if(x % 5 == 0){
-        fizBuz[x] = 'buz';
-    }else{
-        fizBuz[x] = x;
-    }
-}
-console.log(fizBuz);
+for(x=1;x<100;x++)console.log((x%3?"":"fiz")+(x%5?"":"buz")||x) //When i realized 3%3 returns false i had to make this (I know this is exist but i figured it out my self, then realized other people did it before me)
